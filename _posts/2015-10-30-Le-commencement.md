@@ -14,7 +14,7 @@ Notre mission est de créer un plugin wordpress pour mettre le livret numérique
 Pour cela, nous avons commencé à éditer les fichiers minimum pour "dire à wordpress" que notre programme est un plugin.
 
 Notre projet ressemble donc à cela pour le moment:
-{% highlight %}
+{% highlight html %}
 .
 +-- Digital-Booklet-WP
 |   +-- index.php
