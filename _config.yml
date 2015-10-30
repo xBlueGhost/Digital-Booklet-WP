@@ -6,7 +6,7 @@ words_per_minute: 200
 logo:             images/logo.png
 # Your site's domain goes here (eg: //mmistakes.github.io, http://mademistakes.com, etc)
 # When testing locally leave blank or use http://localhost:4000
-# url: http://aronbordin.com/neo-hpstr-jekyll-theme
+url: http://ensicaen-digital-booklet.github.io/Digital-Booklet-WP/
 
 menu:
   - title: 'Home'
@@ -47,11 +47,11 @@ owner:
 
 social:
   - title: "github"
-    url: "https://github.com/aron-bordin"
-  - title: "linkedin"
-    url: "https://br.linkedin.com/in/aronbordin"
-  - title: "youtube"
-    url: "https://www.youtube.com/channel/UCfnSek-9HPWOx5e2pH7VFgg"
+    url: "https://github.com/ensicaen-digital-booklet"
+  #- title: "linkedin"
+  #  url: "https://br.linkedin.com/in/aronbordin"
+  #- title: "youtube"
+  #  url: "https://www.youtube.com/channel/UCfnSek-9HPWOx5e2pH7VFgg"
 # Background image to be tiled on all pages
 background:
 
@@ -62,7 +62,7 @@ google_verify:
 bing_verify:
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-timezone:    America/New_York
+timezone:    France/Paris
 future:      true
 highlighter: pygments
 markdown:    kramdown
