@@ -28,11 +28,11 @@ menu:
 
 # Owner/author information
 owner:
-  name:           Quentin CATHERINE, Camille NEUVEU, Margaux LEQUETIER, Martin GILLET
+  name:           ENSICAEN Digital Booklet
   site:           http://ensicaen.balsakup.fr
-  avatar:         images/avatar.jpg
-  bio:            "Your bio goes here. It shouldn't be super long but a good two sentences or two should suffice."
-  email:          you@email.com
+  avatar:         https://maquette.ensicaen.fr/wp-content/uploads/2015/06/logo_ensicaen_petit1.png
+  bio:            "Equipe de développement du livret numérique de l'ENSICAEN"
+  email:          quentin.catherine@etu.unicaen.fr
   # Social networking links used in footer. Update and remove as you like.
   twitter: 
   facebook:
@@ -48,10 +48,6 @@ owner:
 social:
   - title: "github"
     url: "https://github.com/ensicaen-digital-booklet"
-  #- title: "linkedin"
-  #  url: "https://br.linkedin.com/in/aronbordin"
-  #- title: "youtube"
-  #  url: "https://www.youtube.com/channel/UCfnSek-9HPWOx5e2pH7VFgg"
 # Background image to be tiled on all pages
 background:
 
