@@ -30,7 +30,7 @@ menu:
 owner:
   name:           ENSICAEN Digital Booklet
   site:           http://ensicaen.balsakup.fr
-  avatar:         https://maquette.ensicaen.fr/wp-content/uploads/2015/06/logo_ensicaen_petit1.png
+  avatar:         images/avatar.jpg
   bio:            "Equipe de développement du livret numérique de l'ENSICAEN"
   email:          quentin.catherine@etu.unicaen.fr
   # Social networking links used in footer. Update and remove as you like.
