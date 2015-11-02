@@ -1,7 +1,7 @@
 <?php
 /**
  * Fichier contenant les fonctions utilisées lors de l'activation du du plugin
- * @author Quentin CATHERINE
+ * @author Quentin CATHERINE,Camille NEVEU
  * @version 0.0.1-alpha
  */
 class ENSICAEN_Digital_Booklet__uninstall {
