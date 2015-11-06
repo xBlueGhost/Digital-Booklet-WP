@@ -18,6 +18,10 @@ class ENSICAEN_Digital_Booklet {
 		//////////
 		include_once plugin_dir_path(__FILE__) . 'install.php'; // Fichier d'installation du plugin
 		include_once plugin_dir_path(__FILE__) . 'uninstall.php'; // Fichier de désinstallation du plugin
+		include_once plugin_dir_path(__FILE__) . 'admin.php'; // Fichier d'administration du plugin
+
+		add_action('admin_menu', array('ENSICAEN_Digital_Booklet__admin', 'add_admin_menu'), 20);
+		add_action('admin_init', array('ENSICAEN_Digital_Booklet__admin', 'register_settings'));
 
 		register_activation_hook(__FILE__, array( 'ENSICAEN_Digital_Booklet__install', 'install_db' )); // Enregistre l'énvènement d'installation du plugin
 		register_uninstall_hook(__FILE__, array( 'ENSICAEN_Digital_Booklet__uninstall', 'uninstall_db' )); // Enregistre l'évènement de désinstallation du plugin
