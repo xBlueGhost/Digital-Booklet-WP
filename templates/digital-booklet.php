@@ -10,10 +10,6 @@
 
 <?php get_header(); ?>
 
-	<?php do_action( 'himalayas_before_body_content' );
-
-	$himalayas_layout = himalayas_layout_class(); ?>
-
 	<div id="content" class="site-content">
 	   <main id="main" class="clearfix <?php echo $himalayas_layout; ?>">
 	      <div class="tg-container">
@@ -30,7 +26,5 @@
 			</div>
 		</main>
 	</div>
-
-	<?php do_action( 'himalayas_after_body_content' ); ?>
 
 <?php get_footer(); ?>
