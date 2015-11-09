@@ -1,17 +1,7 @@
-<?php
-/**
- * The template used for displaying page content.
- *
- * @package ThemeGrill
- * @subpackage Himalayas
- * @since Himalayas 1.0
- */
-?>
-
 <?php get_header(); ?>
 
 	<div id="content" class="site-content">
-	   <main id="main" class="clearfix <?php echo $himalayas_layout; ?>">
+	   <main id="main" class="clearfix">
 	      <div class="tg-container">
 
 				<div id="primary">
@@ -22,7 +12,7 @@
 					</div><!-- #content -->
 				</div><!-- #primary -->
 
-				<?php  himalayas_sidebar_select(); ?>
+				<?php  get_sidebar(); ?>
 			</div>
 		</main>
 	</div>
