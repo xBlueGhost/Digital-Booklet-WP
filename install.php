@@ -56,7 +56,7 @@ class ENSICAEN_Digital_Booklet__install {
 			'post_type' => 'page'
 		);
 
-		wp_insert_post( $my_post );
+		wp_insert_post($my_post);
 	}
 
 }

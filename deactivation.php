@@ -1,11 +1,11 @@
 <?php
 class ENSICAEN_Digital_Booklet__deactivation {
 
-	public static function deactivation()
+	public static function uninstall_page()
 	{
-		$page = get_page_by_title('Livret Numérique');
+		$page = get_page_by_title('Livret numérique');
 
-		if (is_page($page->ID))
+		if ($page)
 			wp_delete_post($page->ID, true);
 	}
 

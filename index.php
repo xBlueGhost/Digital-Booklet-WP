@@ -18,15 +18,22 @@ class ENSICAEN_Digital_Booklet {
 		//////////
 		include_once plugin_dir_path(__FILE__) . 'install.php'; // Fichier d'installation du plugin
 		include_once plugin_dir_path(__FILE__) . 'uninstall.php'; // Fichier de désinstallation du plugin
+		include_once plugin_dir_path(__FILE__) . 'deactivation.php'; // Fichier de la déactivation du plugin
 		include_once plugin_dir_path(__FILE__) . 'admin.php'; // Fichier d'administration du plugin
 
+		//////////
+		// Mappage des actions
+		//////////
 		add_action('admin_menu', array('ENSICAEN_Digital_Booklet__admin', 'add_admin_menu'), 20);
 		add_action('admin_init', array('ENSICAEN_Digital_Booklet__admin', 'register_settings'));
 
-		register_activation_hook(__FILE__, array( 'ENSICAEN_Digital_Booklet__install', 'install_db' )); // Enregistre l'énvènement d'installation du plugin
-		register_activation_hook(__FILE__, array( 'ENSICAEN_Digital_Booklet__install', 'install_page'));
+		//////////
+		// Mappage des événements
+		//////////
+		register_activation_hook(__FILE__, array( 'ENSICAEN_Digital_Booklet__install', 'install_db' )); // Enregistre l'évènement d'installation du plugin
+		register_activation_hook(__FILE__, array( 'ENSICAEN_Digital_Booklet__install', 'install_page')); // Enregistre l'évènement de l'installation de la page
 		register_uninstall_hook(__FILE__, array( 'ENSICAEN_Digital_Booklet__uninstall', 'uninstall_db' )); // Enregistre l'évènement de désinstallation du plugin
-		register_deactivation_hook(__FILE__, array( 'ENSICAEN_Digital_Booklet__deactivation', 'deactivation' ));
+		register_deactivation_hook(__FILE__, array( 'ENSICAEN_Digital_Booklet__deactivation', 'uninstall_page' )); // Enregistre l'évènement de la déinsallation de la page
 	}
 
 }
