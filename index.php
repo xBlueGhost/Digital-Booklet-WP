@@ -24,7 +24,9 @@ class ENSICAEN_Digital_Booklet {
 		add_action('admin_init', array('ENSICAEN_Digital_Booklet__admin', 'register_settings'));
 
 		register_activation_hook(__FILE__, array( 'ENSICAEN_Digital_Booklet__install', 'install_db' )); // Enregistre l'énvènement d'installation du plugin
+		register_activation_hook(__FILE__, array( 'ENSICAEN_Digital_Booklet__install', 'install_page'));
 		register_uninstall_hook(__FILE__, array( 'ENSICAEN_Digital_Booklet__uninstall', 'uninstall_db' )); // Enregistre l'évènement de désinstallation du plugin
+		register_deactivation_hook(__FILE__, array( 'ENSICAEN_Digital_Booklet__deactivation', 'deactivation' ));
 	}
 
 }
