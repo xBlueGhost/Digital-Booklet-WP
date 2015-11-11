@@ -6,9 +6,36 @@
 
 				<div id="primary">
 					<div id="content-2">
-						<h1>Hello World</h1>
-						<p>Je suis le template personnalisé du plugin <b>ENSICAEN Digital Booklet</b>, tu peux me retourver ici :</p>
-						<pre>wp-content/plugins/ENSICAEN Digital Booklet/templates/digital-booklet.php</pre>
+						<h1>Les spécialités</h1>
+
+
+						<?php
+						global $wpdb;
+						global $wp;
+						$results= $wpdb->get_results("SELECT * FROM {$wpdb->prefix}ensicaen_digital_boolket_specialite");
+						foreach($results as $result){
+							echo '<a href="' . home_url(add_query_arg(array_merge($wp->query_vars, array('specialite' => $result->numero)), $wp->request)) . '">' . $result->nom.'</a><br>';
+						}
+
+						if ($_GET['specialite'] == 1){
+							echo 'UE : ';
+							$results= $wpdb->get_results("SELECT * FROM {$wpdb->prefix}ensicaen_digital_boolket_ue");
+							foreach($results as $result){
+								echo $result->numero;
+							}
+
+							echo ' Matière : ';
+							$results= $wpdb->get_results("SELECT * FROM {$wpdb->prefix}ensicaen_digital_boolket_matiere");
+							foreach($results as $result){
+								echo $result->nom;
+								
+							}
+
+							}
+						?>
+
+						<h1>Les mastères spécialisés</h1>
+						
 					</div><!-- #content -->
 				</div><!-- #primary -->
 
