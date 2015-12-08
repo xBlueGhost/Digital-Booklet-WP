@@ -1,0 +1,19 @@
+#edb .item .accordion_title {
+	display: block;
+	padding: 10px 20px;
+	background-color: #346BC2;
+	transition-duration: 0.5s;
+	font-weight: 500;
+	color: rgba(255, 255, 255, 0.8);
+	text-decoration: none;
+}
+
+#edb .item .accordion_content {
+	background-color: #EEE;
+	padding: 10px;
+	display: none;
+}
+
+#edb .item.active .accordion_content {
+	display: block;
+}
