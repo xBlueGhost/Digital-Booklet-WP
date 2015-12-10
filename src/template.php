@@ -2,10 +2,23 @@
 
 global $wpdb;
 
-$specialities = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}edb_specialities");
-$semesters    = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}edb_semesters");
+$edblang      = isset($_GET['edblang']) && !empty($_GET['edblang']) ? $_GET['edblang'] : 'FR';
+$lang_id      = $wpdb->get_row("SELECT id FROM {$wpdb->prefix}edb_langs WHERE code = '$edblang'")->id;
+
+$langs        = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}edb_langs");
+
+$specialities = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}edb_specialities WHERE lang_id = $lang_id");
+$semesters    = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}edb_semesters WHERE lang_id = $lang_id");
 
 ?>
+
+<nav class="edb_flags">
+	<?php foreach ($langs as $lang): ?>
+	
+	<a href="<?php echo esc_url(add_query_arg('edblang', $lang->code)); ?>"><img src="<?php echo plugins_url('assets/img/flags/' . $lang->code . '.png', __FILE__); ?>" alt="<?php echo $lang->name; ?>"></a>
+	
+	<?php endforeach; ?>
+</nav>
 
 <div id="edb" class="specialities">
 	<?php foreach ($specialities as $k => $speciality): ?>
@@ -20,6 +33,19 @@ $semesters    = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}edb_semesters")
 				
 				<div class="item semester">
 					<a href="#<?php echo sanitize_title($semester->name) . '-' . $semester->id; ?>" class="accordion_title"><?php echo $semester->name; ?></a>
+					
+					<table>
+						<tbody>
+							<tr>
+								<td>
+									<!-- Description UE -->
+								</td>
+								<td>
+									<!-- Modules de l'UE -->
+								</td>
+							</tr>
+						</tbody>
+					</table>
 				</div>
 				
 				<?php endforeach; ?>

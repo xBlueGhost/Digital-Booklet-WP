@@ -9,11 +9,27 @@
 }
 
 #edb .item .accordion_content {
-	background-color: #EEE;
+	background-color: #DDD;
 	padding: 10px;
 	display: none;
 }
 
 #edb .item.active .accordion_content {
 	display: block;
+}
+
+.edb_flags {
+	height: 45px;
+	background-color: #DDD;
+}
+
+.edb_flags a {
+	display: block;
+	float: left;
+	height: 25px;
+	margin: 10px 0 10px 10px;
+}
+
+.edb_flags a img {
+	height: 100%;
 }
