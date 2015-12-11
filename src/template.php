@@ -10,6 +10,11 @@ $langs        = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}edb_langs");
 $specialities = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}edb_specialities WHERE lang_id = $lang_id");
 $semesters    = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}edb_semesters WHERE lang_id = $lang_id");
 
+echo '$_GET: <br>';
+echo '<pre>';
+print_r($_GET);
+echo '</pre>';
+
 ?>
 
 <nav class="edb_flags">
