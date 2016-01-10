@@ -41,12 +41,7 @@ class EDB_Plugin {
 		global $post;
 		
 		if ($post->post_title == 'Livret numérique')
-		{
-			$content = '';
 			include plugin_dir_path(__FILE__) . 'template.php';
-		}
-			
-		return $content;
 	}
 	
 }

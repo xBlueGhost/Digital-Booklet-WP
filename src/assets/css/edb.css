@@ -30,33 +30,25 @@
 	display: none;
 }
 
-#edb .item.active .accordion_content {
+#edb .item.active > .accordion_content {
 	display: block;
 }
 
 #edb .ue_list tr td, 
 #edb .ue_list tr th {
-	border: 1px solid #4E85DC;
+	border: 1px solid #ABABAB;
 	border-collapse: collapse;
-	padding: 10px 20px;
 }
 
 #edb .ue_list tr td span {
 	display: block;
 }
 
-#edb .ue_list tr td.eu_separator {
-	background-color: #4E85DC;
+#edb .major thead tr th {
+    background-color: #4CAF50;
+    color: #FFF;
 }
 
-#edb .ue_list tr td .ue_type {
-	color: #FFF;
-	text-transform: uppercase;
-	font-weight: 400;
-}
-
-#edb .ue_list tr td .ue_code {
-	text-transform: uppercase;
-	font-size: 20px;
-	font-weight: 400;
+#edb .major tbody tr td {
+    background-color: #C8E6C9;
 }
