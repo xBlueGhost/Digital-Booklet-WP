@@ -9,6 +9,13 @@ function debug($v)
     echo '</pre>';
 }
 
+function getWordInRegister($key, $lang_num)
+{
+    global $wpdb;
+
+    return $wpdb->get_row("SELECT register_value FROM {$wpdb->prefix}edb_register WHERE register_key = '$key' AND lang_num = $lang_num")->register_value;
+}
+
 function getSchoolingType($speciality_num, $semester_num, $lang_num)
 {
     global $wpdb;
@@ -44,6 +51,9 @@ function getUEs($speciality_num, $semester_num, $schooling_type_num, $lang_num)
 }
 
 $edblang      = isset($_GET['edblang']) && !empty($_GET['edblang']) ? $_GET['edblang'] : 'FR';
+
+$edblang      = strstr($_SERVER['SERVER_SOFTWARE'], 'nginx') ? explode('?edblang=', $_SERVER['REQUEST_URI'])[1] : 'FR';
+
 $lang_num     = $wpdb->get_row("SELECT lang_num FROM {$wpdb->prefix}edb_langs WHERE lang_code = '$edblang'")->lang_num;
 $langs        = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}edb_langs");
 $specialities = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}edb_specialities JOIN {$wpdb->prefix}edb_specialities_langs USING(speciality_num) WHERE lang_num = $lang_num ORDER BY speciality_order");
@@ -80,8 +90,8 @@ $semesters    = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}edb_semesters  
                             <thead>
                                 <tr>
                                     <th width="46%"><?php echo $schooling_type->schooling_type_name; ?></th>
-                                    <th width="18%">Code</th>
-                                    <th width="18%">Moyenne mini</th>
+                                    <th width="18%"><?php echo getWordInRegister('code', $lang_num); ?></th>
+                                    <th width="18%"><?php echo getWordInRegister('average_min', $lang_num); ?></th>
                                     <th width="18%">ECTS</th>
                                 </tr>
                             </thead>
@@ -99,19 +109,19 @@ $semesters    = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}edb_semesters  
                                         <table>
                                             <tbody>
                                                 <tr>
-                                                    <td>Module</td>
-                                                    <td>Code</td>
-                                                    <td colspan="3">Nb heures</td>
-                                                    <td colspan="3">Coefficients</td>
+                                                    <td><?php echo getWordInRegister('module', $lang_num); ?></td>
+                                                    <td><?php echo getWordInRegister('code', $lang_num); ?></td>
+                                                    <td colspan="3"><?php echo getWordInRegister('nb_hours', $lang_num); ?></td>
+                                                    <td colspan="3"><?php echo getWordInRegister('coefficients', $lang_num); ?></td>
                                                 </tr>
                                                 <tr>
                                                     <td colspan="2"></td>
-                                                    <td>Cours</td>
-                                                    <td>TD</td>
-                                                    <td>TP</td>
-                                                    <td>Partiel</td>
-                                                    <td>Exam</td>
-                                                    <td>TP</td>
+                                                    <td><?php echo getWordInRegister('course', $lang_num); ?></td>
+                                                    <td><?php echo getWordInRegister('directed_work', $lang_num); ?></td>
+                                                    <td><?php echo getWordInRegister('practical_work', $lang_num); ?></td>
+                                                    <td><?php echo getWordInRegister('partial', $lang_num); ?></td>
+                                                    <td><?php echo getWordInRegister('exam', $lang_num); ?></td>
+                                                    <td><?php echo getWordInRegister('practical_work', $lang_num); ?></td>
                                                 </tr>
                                                 <tr>
                                                     <td>Anglais</td>
